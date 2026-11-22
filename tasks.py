@@ -49,7 +49,7 @@ print(tokens)
 def tokenize(string: str) -> list:
     tokens = ["".join(char.lower() for char in word if char.isalnum())
               for word in string.split()]
-    return set(tokens)
+    return tokens
 
 # -----------------------------------------------
 

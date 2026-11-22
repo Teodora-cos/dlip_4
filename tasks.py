@@ -52,7 +52,7 @@ def tokenize(string: str) -> list:
         token = "".join(char.lower() for char in word if char.isalnum())
         if token:
             tokens.append(token)
-    return sorted(set(tokens))
+    return tokens
 
 # -----------------------------------------------
 

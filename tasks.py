@@ -47,9 +47,12 @@ print(tokens)
 # Your code here:
 # -----------------------------------------------
 def tokenize(string: str) -> list:
-    tokens = ["".join(char.lower() for char in word if char.isalnum())
-              for word in string.split()]
-    return tokens
+    tokens = []
+    for word in string.split():
+        token = "".join(char.lower() for char in word if char.isalnum())
+        if token:
+            tokens.append(token)
+    return sorted(set(tokens))
 
 # -----------------------------------------------
 

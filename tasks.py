@@ -49,7 +49,7 @@ print(tokens)
 def tokenize(string: str) -> list:
     tokens = ["".join(char.lower() for char in word if char.isalnum())
               for word in string.split()]
-    return sorted(set(tokens))
+    return set(tokens)
 
 # -----------------------------------------------
 
@@ -100,7 +100,7 @@ def token_counts(string: str, k: int = 1) -> dict:
 
     word_frequencies = {word: tokens.count(word)
                         for word in set(tokens)
-                        if word and tokens.count(word) > k
+                        if word and tokens.count(word) >= k
                         }
     return word_frequencies
 # test:
